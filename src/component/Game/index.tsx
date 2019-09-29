@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Square: React.FC = () => {
+type SquareProps = {
+    num: number
+}
+
+const Square: React.FC<SquareProps> = prrops => {
     return (
-    <button className="square">
-        {/* TODO */}
+    <button className="square" onClick={() => alert('click')}>
+        {prrops.num}
     </button>
     );
 }
@@ -11,7 +15,7 @@ const Square: React.FC = () => {
 const Board: React.FC = () => {
 
     const renderSquare = (i: number) => {
-        return <Square />;
+        return <Square num={i}/>;
     }
 
 
