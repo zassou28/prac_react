@@ -1,48 +1,5 @@
 import React from 'react';
-
-type SquareProps = {
-    num: number
-}
-
-const Square: React.FC<SquareProps> = prrops => {
-    return (
-    <button className="square" onClick={() => alert('click')}>
-        {prrops.num}
-    </button>
-    );
-}
-  
-const Board: React.FC = () => {
-
-    const renderSquare = (i: number) => {
-        return <Square num={i}/>;
-    }
-
-
-
-    const status = 'Next player: X';
-
-    return (
-    <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-        </div>
-        <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-        </div>
-        <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-        </div>
-    </div>
-    );
-}
+import Board from './Board'
 
 const Game: React.FC = () => {
 
